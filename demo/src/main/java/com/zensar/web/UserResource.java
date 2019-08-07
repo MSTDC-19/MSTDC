@@ -47,13 +47,13 @@ import com.zensar.services.UserService;
 		@PutMapping
 		public String editUser(@RequestBody User user) {
 			service.edit(user);
-			return "User "+user.getId()+" edited successfully.";
+			return "User "+user.getUserId()+" edited successfully.";
 		}
 		
 		@DeleteMapping
 		public String removeUser(@RequestBody User user) {
 			service.remove(user);
-			return " User "+user.getId()+" removed successfully.";
+			return " User "+user.getUserId()+" removed successfully.";
 		}
 		
 		@GetMapping("/count")

@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
 	
 	public void edit(User user) {
-		User dbuser=dao.getById(user.getId());
+		User dbuser=dao.getById(user.getUserId());
 		if(dbuser!=null) {
 			dbuser.setName(user.getName());
 			dbuser.setRole(user.getRole());

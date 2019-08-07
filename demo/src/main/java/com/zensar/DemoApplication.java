@@ -25,7 +25,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
         {DataSourceAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class,
 		HibernateJpaAutoConfiguration.class})
-public class DemoApplication {
+public class DemoApplication{
 	@Autowired
 	private Environment env;
 

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class User {
 	@Id
-	private int id;
+	private int UserId;
 	private String name;
 	private String role;
 	private String password;
@@ -22,21 +22,21 @@ public class User {
 	public User() {
 	}
 	
-	public User(int id, String name, String role, String password, String contact, String email) {
+	public User(int UserId, String name, String role, String password, String contact, String email) {
 		super();
-		this.id = id;
+		this.UserId = UserId;
 		this.name = name;
 		this.role = role;
 		this.password = password;
 		this.contact = contact;
 		this.email = email;
 	}
-		public int getId() {
-		return id;
+		public int getUserId() {
+		return UserId;
 	}
 	
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int UserId) {
+		this.UserId = UserId;
 	}
 	
 	public String getName() {
@@ -81,7 +81,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", role=" + role + ", password=" + password + ", conatct="
+		return "User [UserId=" + UserId + ", name=" + name + ", role=" + role + ", password=" + password + ", conatct="
 				+ contact + ", email=" + email + "]";
 	}
 	
