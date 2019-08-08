@@ -16,22 +16,29 @@ public class Hotel {
 	@Id
 	private int hotelId;
 	private String hotelName;
-	private List<String> hotelAmenities;
+	private String hotelAmenities;
 	
-	@Autowired
+	@OneToOne
 	private Address address;
+	
+	
 	
 	public Hotel() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Hotel(int hotelId, String hotelName, List<String> hotelAmenities) {
+	
+	
+	public Hotel(int hotelId, String hotelName, String hotelAmenities, Address address) {
 		super();
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.hotelAmenities = hotelAmenities;
+		this.address = address;
 	}
-	
+
+
+
 	public int getHotelId() {
 		return hotelId;
 	}
@@ -48,19 +55,34 @@ public class Hotel {
 		this.hotelName = hotelName;
 	}
 	
-	public List<String> getHotelAmenities() {
+
+
+	public String getHotelAmenities() {
 		return hotelAmenities;
 	}
-	
-	public void setHotelAmenities(List<String> hotelAmenities) {
+
+	public void setHotelAmenities(String hotelAmenities) {
 		this.hotelAmenities = hotelAmenities;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	
+
+
 	@Override
 	public String toString() {
-		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAmenities=" + hotelAmenities + ", address=" + address
-				+ "]";
+		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", hotelAmenities=" + hotelAmenities
+				+ ", address=" + address + "]";
 	}
+
+	
 
 	
 }

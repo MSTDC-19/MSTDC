@@ -5,10 +5,11 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
+
 import org.springframework.stereotype.Component;
 @Component
 @Entity
@@ -21,7 +22,7 @@ public class Bookings {
 	@ManyToOne
 	private User user;
 	
-	@Autowired
+	
 	@ManyToOne
 	private Hotel hotel;
 	private Date startDate;
@@ -34,22 +35,33 @@ public class Bookings {
 	}
 
 
-	public Bookings(int bookingId, String bookingStatus, User user, Date startDate, Date endDate, int noOfRooms) {
+	
+
+	public Bookings(int bookingId, String bookingStatus, User user, Hotel hotel, Date startDate, Date endDate,
+			int noOfRooms) {
 		super();
 		this.bookingId = bookingId;
 		this.bookingStatus = bookingStatus;
 		this.user = user;
+		this.hotel = hotel;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.noOfRooms = noOfRooms;
 	}
 
 
+
+
+	
+
+
 	@Override
 	public String toString() {
-		return "Bookings [bookingId=" + bookingId + ", bookingStatus=" + bookingStatus + ", user=" + user
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", noOfRooms=" + noOfRooms + "]";
+		return "Bookings [bookingId=" + bookingId + ", bookingStatus=" + bookingStatus + ", user=" + user + ", hotel="
+				+ hotel + ", startDate=" + startDate + ", endDate=" + endDate + ", noOfRooms=" + noOfRooms + "]";
 	}
+
+
 
 
 	public int getBookingId() {
@@ -109,6 +121,20 @@ public class Bookings {
 
 	public void setNoOfRooms(int noOfRooms) {
 		this.noOfRooms = noOfRooms;
+	}
+
+
+
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+
+
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
 	}
 
 

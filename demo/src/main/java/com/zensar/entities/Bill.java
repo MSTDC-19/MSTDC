@@ -2,9 +2,10 @@ package com.zensar.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import org.springframework.data.annotation.Id;
+
 import org.springframework.stereotype.Component;
 @Component
 @Entity

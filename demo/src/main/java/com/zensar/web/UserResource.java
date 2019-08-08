@@ -32,18 +32,18 @@ import com.zensar.services.UserService;
 			return service.findAllUsers();
 		}
 		
-		@GetMapping("/{id}")	
-		public User getUser(@PathVariable("id") int productId) {
-			return service.findById(productId);
+		@GetMapping("/{userid}")	
+		public User getUser(@PathVariable("userid") int userId) {
+			return service.findById(userId);
 		}
 		
-		/*@PostMapping
-		public String createUser(@RequestParam("id") int id,@RequestParam("name") String name,@RequestParam("brand") String brand,@RequestParam("price") float price) {
-		User user=new User(productId,name,brand,price);
-		service.create(product);
-		return "Product "+productId+" created successfully.";
+		@PostMapping
+		public String createUser(@RequestParam("userid") int userId,@RequestParam("name") String name,@RequestParam("role") String role,@RequestParam("password") String password,@RequestParam("contact")  int contact,@RequestParam("email") String email) {
+		User user=new User(userId,name,role,password,contact,email);
+		service.create(user);
+		return "User "+userId+" created successfully.";
 		}
-		*/
+		
 		@PutMapping
 		public String editUser(@RequestBody User user) {
 			service.edit(user);

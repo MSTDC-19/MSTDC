@@ -15,14 +15,14 @@ public class User {
 	private String role;
 	private String password;
 	
-    private String contact;
+    private int contact;
 	private String email;
 	
 	
 	public User() {
 	}
 	
-	public User(int UserId, String name, String role, String password, String contact, String email) {
+	public User(int UserId, String name, String role, String password, int contact, String email) {
 		super();
 		this.UserId = UserId;
 		this.name = name;
@@ -63,11 +63,11 @@ public class User {
 		this.password = password;
 	}
 	
-	public String getConatct() {
+	public int getConatct() {
 		return contact;
 	}
 	
-	public void setConatct(String conatct) {
+	public void setConatct(int conatct) {
 		this.contact = conatct;
 	}
 	

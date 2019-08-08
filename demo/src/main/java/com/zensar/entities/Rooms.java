@@ -3,16 +3,17 @@ package com.zensar.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.Id;
+
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
 public class Rooms {
-	@Autowired
+	
 	@ManyToOne
 	private Hotel hotel;
 	@Id
@@ -25,12 +26,17 @@ public class Rooms {
 	
 	}
 
-	public Rooms(int roomId, String roomType, float roomPrice) {
+	
+
+	public Rooms(int roomId, String roomType, float roomPrice, Hotel hotel) {
 		super();
 		this.roomId = roomId;
 		this.roomType = roomType;
 		this.roomPrice = roomPrice;
+		this.hotel = hotel;
 	}
+
+
 
 	public int getRoomId() {
 		return roomId;
@@ -56,10 +62,27 @@ public class Rooms {
 		this.roomPrice = roomPrice;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Rooms [hotel=" + hotel + ", roomId=" + roomId + ", roomType=" + roomType + ", roomPrice=" + roomPrice + "]";
+		return "Rooms [hotel=" + hotel + ", roomId=" + roomId + ", roomType=" + roomType + ", roomPrice=" + roomPrice
+				+ "]";
 	}
+
+
+
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+
+	
 	
 	
 	
