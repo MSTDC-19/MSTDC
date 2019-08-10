@@ -2,6 +2,8 @@ package com.zensar.entities;
 
 import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Address {
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int addressId;
 	private String area;
 	private String city;
 	private String landmark;
@@ -23,9 +26,9 @@ public class Address {
 	
 	
 
-	public Address(int id, String area, String city, String landmark, String locality) {
+	public Address(int addressId, String area, String city, String landmark, String locality) {
 		super();
-		this.id = id;
+		this.addressId = addressId;
 		this.area = area;
 		this.city = city;
 		this.landmark = landmark;
@@ -34,14 +37,14 @@ public class Address {
 
 	
 
-	public int getId() {
-		return id;
+	public int getAddressId() {
+		return addressId;
 	}
 
 
 
-	public void setId(int id) {
-		this.id = id;
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
 	}
 
 
@@ -80,7 +83,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", area=" + area + ", city=" + city + ", landmark=" + landmark + ", locality="
+		return "Address [addressId=" + addressId + ", area=" + area + ", city=" + city + ", landmark=" + landmark + ", locality="
 				+ locality + "]";
 	}
 

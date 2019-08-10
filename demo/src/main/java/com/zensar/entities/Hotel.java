@@ -3,6 +3,8 @@ package com.zensar.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Hotel {
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int hotelId;
 	private String hotelName;
 	private String hotelAmenities;
@@ -72,8 +75,6 @@ public class Hotel {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
-	
 
 
 	@Override

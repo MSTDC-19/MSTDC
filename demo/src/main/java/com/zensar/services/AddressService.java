@@ -8,6 +8,6 @@ public interface AddressService {
 	void create(Address address);
 	void edit(Address address);
 	void remove(Address address);
-	Address findById(int id);
+	Address findById(int addressId);
 	List<Address> findAllAddresses();
 }

@@ -28,28 +28,28 @@ public class AddressResource {
 		return addressService.findAllAddresses();
 	}
 	
-	@GetMapping("/{addressid}")	
-	public Address getAddress(@PathVariable("addressid") int id) {
-		return addressService.findById(id);
+	@GetMapping("/{addressId}")	
+	public Address getAddress(@PathVariable("addressId") int addressId) {
+		return addressService.findById(addressId);
 	}
 	
 	@PostMapping
-	public String createAddress(@RequestParam("id") int id,@RequestParam("area") String area,@RequestParam("city") String city,@RequestParam("landmark") String landmark,@RequestParam("loaclity")  String locality){
-	Address address=new Address(id,area,city,landmark,locality);
+	public String createAddress(@RequestParam("addressId") int addressId,@RequestParam("area") String area,@RequestParam("city") String city,@RequestParam("landmark") String landmark,@RequestParam("locality")  String locality){
+	Address address=new Address(addressId,area,city,landmark,locality);
 	addressService.create(address);
-	return "Address "+id+" added successfully.";
+	return "Address "+addressId+" added successfully.";
 	}
 	
 	@PutMapping
 	public String editAddress(@RequestBody Address address) {
 		addressService.edit(address);
-		return "Address "+address.getId()+" edited successfully.";
+		return "Address "+address.getAddressId()+" edited successfully.";
 	}
 	
 	@DeleteMapping
 	public String removeAddress(@RequestBody Address address) {
 		addressService.remove(address);
-		return " Address "+address.getId()+" removed successfully.";
+		return " Address "+address.getAddressId()+" removed successfully.";
 	}
 	
 	@GetMapping("/countAddress")

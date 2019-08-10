@@ -28,8 +28,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	
-	public User getById(int id) {
-		return hibernatetemplate.get(User.class, id);
+	public User getById(int userId) {
+		return hibernatetemplate.get(User.class, userId);
 	}
 
 	

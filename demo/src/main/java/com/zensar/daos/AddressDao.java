@@ -8,6 +8,6 @@ public interface AddressDao {
 	void insert(Address address);
 	void update(Address address);
 	void delete(Address address);
-	Address getById(int id);
+	Address getById(int addressId);
 	List<Address> getAll();
 }

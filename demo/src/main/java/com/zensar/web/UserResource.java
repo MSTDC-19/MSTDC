@@ -32,13 +32,13 @@ import com.zensar.services.UserService;
 			return service.findAllUsers();
 		}
 		
-		@GetMapping("/{userid}")	
-		public User getUser(@PathVariable("userid") int userId) {
+		@GetMapping("/{userId}")	
+		public User getUser(@PathVariable("userId") int userId) {
 			return service.findById(userId);
 		}
 		
 		@PostMapping
-		public String createUser(@RequestParam("userid") int userId,@RequestParam("name") String name,@RequestParam("role") String role,@RequestParam("password") String password,@RequestParam("contact")  int contact,@RequestParam("email") String email) {
+		public String createUser(@RequestParam("userId") int userId,@RequestParam("name") String name,@RequestParam("role") String role,@RequestParam("password") String password,@RequestParam("contact")  int contact,@RequestParam("email") String email) {
 		User user=new User(userId,name,role,password,contact,email);
 		service.create(user);
 		return "User "+userId+" created successfully.";
@@ -56,7 +56,7 @@ import com.zensar.services.UserService;
 			return " User "+user.getUserId()+" removed successfully.";
 		}
 		
-		@GetMapping("/count")
+		@GetMapping("/countUsers")
 		public int getUserCount() {
 			return service.findAllUsers().size();
 		}

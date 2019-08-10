@@ -31,9 +31,9 @@ public class AddressDaoImpl implements AddressDao {
 	}
 
 	
-	public Address getById(int id) {
+	public Address getById(int addressId) {
 	
-		return hibernatetemplate.get(Address.class, id);
+		return hibernatetemplate.get(Address.class, addressId);
 	}
 
 	

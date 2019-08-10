@@ -8,6 +8,6 @@ public interface UserService {
 	void create(User user);
 	void edit(User user);
 	void remove(User user);
-	User findById(int id);
+	User findById(int userId);
 	List<User> findAllUsers();
 }

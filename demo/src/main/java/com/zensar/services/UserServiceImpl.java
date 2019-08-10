@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 			dbuser.setName(user.getName());
 			dbuser.setRole(user.getRole());
 			dbuser.setPassword(user.getPassword());
-			dbuser.setConatct(user.getConatct());
+			dbuser.setContact(user.getContact());
 			dbuser.setEmail(user.getEmail());
 			
 			dao.update(user);	
@@ -45,9 +45,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	
-	public User findById(int id) {
+	public User findById(int userId) {
 	
-		return dao.getById(id);
+		return dao.getById(userId);
 	}
 
 	

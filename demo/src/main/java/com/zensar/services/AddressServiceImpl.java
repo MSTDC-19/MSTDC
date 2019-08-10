@@ -22,7 +22,7 @@ public class AddressServiceImpl implements AddressService {
 
 	
 	public void edit(Address address) {
-		Address dbaddress=addressDao.getById(address.getId());
+		Address dbaddress=addressDao.getById(address.getAddressId());
 		if(dbaddress!=null) {
 			dbaddress.setArea(address.getArea());
 			dbaddress.setCity(address.getCity());
@@ -46,9 +46,9 @@ public class AddressServiceImpl implements AddressService {
 	
 
 	
-	public Address findById(int id) {
+	public Address findById(int addressId) {
 		
-		return addressDao.getById(id);
+		return addressDao.getById(addressId);
 	}
 
 	
