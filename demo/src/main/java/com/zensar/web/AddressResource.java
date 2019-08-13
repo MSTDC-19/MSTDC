@@ -34,7 +34,7 @@ public class AddressResource {
 	}
 	
 	@PostMapping
-	public String createAddress(@RequestParam("addressId") int addressId,@RequestParam("area") String area,@RequestParam("city") String city,@RequestParam("landmark") String landmark,@RequestParam("locality")  String locality){
+	public String createAddress(@RequestParam("addressId") int addressId,@RequestParam("area") String area,@RequestParam("city") String city,@RequestParam("landmark") String landmark,@RequestParam("locality") String locality){
 	Address address=new Address(addressId,area,city,landmark,locality);
 	addressService.create(address);
 	return "Address "+addressId+" added successfully.";

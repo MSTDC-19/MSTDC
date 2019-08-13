@@ -1,6 +1,7 @@
 package com.zensar.entities;
 
 import javax.annotation.Generated;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name="id")
 	private int addressId;
 	private String area;
 	private String city;
